@@ -5,6 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>CSS calendar</title>
+  <style>
+      * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      padding: 100px 0;
+      text-align: center;
+    }
+    .t {
+      display: inline-block;
+      border-right: 1px solid #c2c2c2;
+      border-top: 1px solid #c2c2c2;
+      border-collapse: collapse;
+    }
+    .t tr td {
+      width: 25px;
+      height: 25px;
+      line-height: 25px;
+      border-left: 1px solid #c2c2c2;
+      border-bottom: 1px solid #c2c2c2;
+      font-size: 12px;
+    }
+    .t tr > td + td,
+    .t tr:first-child > td,
+    .t tr:first-child > td + td + td + td +td + td + td {
+      color: #333;
+      background-color: #fff;
+      font-weight: 500;
+    }
+    .t tr:first-child > td,
+    .t tr:first-child > td + td + td + td + td + td + td {
+      font-weight: 600;
+    }
+    .t tr > td,
+    .t tr > td + td + td + td +td + td + td {
+      color: #f00;
+      font-weight: 600;
+      background-color: #f8f8f8;
+    }
+    .t .td-dis {
+      color: #e3e3e3;
+    }
+  </style>
 </head>
 <body>
   <table class="t">

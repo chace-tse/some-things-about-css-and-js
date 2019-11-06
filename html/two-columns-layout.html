@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS Layout Of Two Columns, A Fixed Width, A Width Adaptive</title>
+  <style>
+    /*!
+     * CSS Layout Of Two Columns, A Fixed Width, A Width Adaptive
+    */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-size: 14px;
+      background-color: rgba(43, 43, 43, 1);
+      font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif;
+    }
+    h1 {
+      color: #fff;
+      font-size: 1.8em;
+      padding: 15px 0;
+    }
+    h2 {
+      color: #fff;
+      font-size: 1.6em;
+      padding: 10px 0;
+    }
+    h2 .layout-name {
+      display: inline-block;
+      font-weight: bold;
+      padding: 5px;
+      border-radius: 15px;
+      margin: 0 5px;
+      background-color: #3d76cd;
+    }
+    .layout-container {
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    /*!
+     * Title 
+    */
+    .title {
+      padding: 1em 0;
+      font-size: 2em;
+      color: #fff;
+      text-align: center;
+    }
+    /*!
+     * Row
+    */
+    .row {
+      padding: 2em 0;
+      font-size: 1.5em;
+      color: #fff;
+    }
+    /*!
+     * Clearfix
+    */
+    .clearfix {
+      *zoom: 1;
+      clear: both;
+      overflow: hidden;
+    }
+    .clearfix::before,
+    .clearfix::after {
+      display: table-cell;
+      content: " ";
+      clear: both;
+      height: 0;
+      font-size: 0;
+      visibility: hidden;
+    }
+    /*!
+     * Fixed Width Column For Left
+    */
+    .column-lt {
+      width: 300px;
+      height: 300px;
+      background-color: rgba(255,255,0,.6);
+    }
+    .column-rt {
+      min-height: 300px;
+      background-color: rgba(0,0,255,.7);
+    }
+    /*!
+      * Float Layout
+    */
+    .float-lt {
+      float: left;
+    }
+    .float-rt {
+      margin-left: 300px;
+    }
+    /*!
+      * BFC Layout
+    */
+    .bfc-lt {
+      float: left;
+    }
+    .bfc-rt {
+      overflow: auto;
+    }
+    /*!
+      * Margin Layout
+    */
+    .margin {
+      padding-left: 300px;
+    }
+    .margin-rt {
+      position: relative;
+      float: left;
+      width: 100%;
+    }
+    .margin-lt {
+      position: relative;
+      float: left;
+      left: -300px;
+      margin-left: -100%;
+    }
+    /*!
+      * Position Layout
+    */
+    .position {
+      position: relative;
+    }
+    .position-lt {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .position-rt {
+      margin-left: 300px;
+    }
+    /*!
+      * Table-Cell Layout
+    */
+    .table {
+      display: table;
+      width: 100%;
+    }
+    .table-cell {
+      display: table-cell;
+    }
+
+    /*!
+      * Flex Layout
+    */
+    .flex {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+      flex-wrap: wrap;
+    }
+    .flex-rt {
+      -webkit-flex: 1;
+      flex: 1;
+    }
+    /*!
+      * Footer
+    */
+    .footer {
+      height: 80px;
+      line-height: 80px;
+      background-color: #535187;
+    }
+  </style>
+</head>
+<body>
+  <div class="layout-container">
+    <h2 class="title">CSS Layout Of Two Columns, A Fixed Width, A Width Adaptive.</h2>
+    <div class="row float-layout">
+      <h2>1、使用<span class="layout-name">Float Layout</span>实现</h2>
+      <div class="float clearfix">
+        <div class="column-lt float-lt">Sidebar Content</div>
+        <div class="column-rt float-rt">Main Content</div>
+      </div>
+      <div class="footer">Footer</div>
+    </div>
+    <!-- /float-layout -->
+    <div class="row bfc-layout">
+      <h2>2、使用<span class="layout-name">BFC</span>原理实现</h2>
+      <div class="bfc clearfix">
+        <div class="column-lt bfc-lt">Sidebar Content</div>
+        <div class="column-rt bfc-rt">Main Content</div>
+      </div>
+      <div class="footer">Footer</div>
+    </div>
+    <!-- /bfc-layout -->
+    <div class="row margin-layout">
+      <h2>3、使用<span class="layout-name">圣杯布局</span>实现</h2>
+      <div class="margin clearfix">
+        <div class="column-rt margin-rt">Main Content</div>
+        <div class="column-lt margin-lt">Sidebar Content</div>
+      </div>
+      <div class="footer">Footer</div>
+    </div>
+    <!-- /margin-layout -->
+    <div class="row position-layout">
+      <h2>4、使用<span class="layout-name">Position Layout</span>实现</h2>
+      <div class="position">
+        <div class="column-lt position-lt">Sidebar Content</div>
+        <div class="column-rt position-rt">Main Content</div>
+      </div>
+      <div class="footer">Footer</div>
+    </div>
+    <!-- /position-layout -->
+    <div class="row table-cell-layout">
+      <h2>5、使用<span class="layout-name">Table-cell Layout</span>实现</h2>
+      <div class="table">
+        <div class="column-lt table-cell">Sidebar Content</div>
+        <div class="column-rt table-cell">Main Content</div>
+      </div>
+      <div class="footer">Footer</div>
+    </div>
+    <!-- /table-cell-layout -->
+    <div class="row flex-layout">
+      <h2>6、使用<span class="layout-name">CSS3 flex Layout</span>实现</h2>
+      <div class="flex">
+        <div class="column-lt flex-lt">Sidebar Content</div>
+        <div class="column-rt flex-rt">Main Content</div>
+      </div>
+      <div class="footer">Footer</div>
+    </div>
+    <!-- /flex-layout -->
+  </div>
+  <!-- /layout-container -->
+</body>
+</html>

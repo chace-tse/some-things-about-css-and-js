@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>CSS Multi-line text vertical centering solution</title>
+  <title>CSS Multi-line text vertical centering solution.</title>
   <style>
       * {
       margin: 0;
@@ -33,6 +33,7 @@
       color: #fff;
       font-size: 28px;
       line-height: 36px;
+      text-transform: capitalize;
     }
     /*!
      * For IE6、IE7+ Empty Element and Inline-Block Element
@@ -44,8 +45,8 @@
     .empty-inline-block .hook {
       overflow: hidden;
       display: inline-block;
-      *zoom: 1; /* for ie6 */
-      *display: inline;  /* for ie7 */
+      *zoom: 1; /* for IE6 */
+      *display: inline;  /* for IE7*/
       vertical-align: middle;
       width: 1px;
       height: 100%;
@@ -55,8 +56,8 @@
     }
     .empty-inline-block p {
       display: inline-block;
-      *zoom: 1; /* for ie6 */
-      *display: inline;  /* for ie7 */
+      *zoom: 1; /* for IE6 */
+      *display: inline;  /* for IE7*/
       vertical-align: middle;
     }
     /*! 
@@ -99,13 +100,13 @@
 </head>
 <body>
   <div class="multi-line-container">
-    <h2 class="title">Multi-line text vertical center solution one (Support for IE6, IE7 +)</h2>
+    <h2 class="title">multi-line text vertical center solution one (support for IE6, IE7+)</h2>
     <div class="box-text empty-inline-block">
       <span class="hook"></span>
       <p>text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text..</p>
     </div>
     <!-- /empty-inline-block -->
-    <h2 class="title">Multi-line text vertical center solution two (Support for IE6, IE7 +)</h2>
+    <h2 class="title">multi-line text vertical center solution two (support for IE6, IE7+)</h2>
     <div class="box-text position">
       <div class="position-middle">
         <p class="position-inner">text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text..</p>
@@ -113,17 +114,17 @@
       <!-- /position -->
     </div>
     <!-- /outer -->
-    <h2 class="title">Multi-line text vertical center solution three (Support for IE8 +)</h2>
+    <h2 class="title">multi-line text vertical center solution three (support for IE8+)</h2>
     <div class="box-text table">
       <p class="table-cell">text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text..</p>
     </div>
     <!-- /table -->
-    <h2 class="title">Multi-line text vertical center solution four (Support for IE9 +)</h2>
+    <h2 class="title">multi-line text vertical center solution four (support for IE9+)</h2>
     <div class="box-text transform">
       <p class="transform-inner">text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text..</p>
     </div>
     <!-- /transform -->
-    <h2 class="title">Multi-line text vertical center solution four (Support for IE9 +)</h2>
+    <h2 class="title">multi-line text vertical center solution four (support for IE9+)</h2>
     <div class="box-text flex">
       <p class="flex-inner">text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text..</p>
     </div>

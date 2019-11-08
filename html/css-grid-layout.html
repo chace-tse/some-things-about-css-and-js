@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>text-transform</title>
+  <title>CSS Grid Layout.</title>
   <style>
     * {
       margin: 0;
@@ -26,36 +26,36 @@
       text-align: center;
       text-transform: capitalize;
     }
-    p {
-      padding: 2em 0;
-      color: #fff;
-      font-size: 1em;
-      text-align: center;
-    }
     /*!
-     * capitalize 首字母大写
-    */
-    .capitalize {
-      text-transform: capitalize;
+     * CSS Gird Layout
+     */
+    .p {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 100vh;
     }
-    /*!
-     * uppercase 全都是大写
-    */
-    .uppercase {
-      text-transform: uppercase;
+    .n {
+      background-color: #a0ddce;
     }
-    /*!
-     * lowercase 全都是小写
-    */
-    .lowercase {
-      text-transform: lowercase;
+    .t {
+      background-color: #f6d02e;
+    }
+    .s {
+      background-color: #6a7a8a;
+    }
+    .f {
+      background-color: #52abe5;
     }
   </style>
 </head>
 <body>
-  <h2 class="title">CSS text-transform property.</h2>
-  <p class="capitalize">capitalize</p>
-  <p class="uppercase">uppercase</p>
-  <p class="lowercase">LOWERCASE</p>
+  <h2 class="title">CSS grid layout.</h2>
+  <section class="p">
+    <div class="n"></div>
+    <div class="t"></div>
+    <div class="s"></div>
+    <div class="f"></div>
+  </section>
+  <!-- /p -->
 </body>
 </html>

@@ -1,4 +1,4 @@
-<h1 align="center"> :lipstick: Some-things-about-CSS.</h1>
+<h1 align="center"> :lipstick: Some-Things-About-CSS.</h1>
 
 
 **一些Codepen Demo效果，及常见的CSS布局解决方案**

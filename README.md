@@ -1,9 +1,10 @@
 <h1 align="center"> :lipstick: Some-Things-About-CSS-And-JavaScript.</h1>
 
+
 ## CSS
 ---
 
-**一些Codepen Demo效果，及常见的CSS布局解决方案**
+**一些Demo效果、及常见的CSS布局解决方案：**
 
 + [*CSS 一个简单的Pop Model效果*](http://imoldy.com/some-things-about-css/demo/css-pop-dialog.html)
 + [*返回顶部按钮效果*](http://imoldy.com/some-things-about-css/demo/back-top-up.html)
@@ -43,5 +44,10 @@
 + [*粘性页脚（页脚始终保持在底部）04*](http://imoldy.com/some-things-about-css/demo/sticky-page-footer-layout-4.html)
 ---
 
+
 ## JavaScript
 ---
+
+**常见的一些JavaScript算法Demo：**
+
++ [*JavaScript 字符串回文实现*](http://imoldy.com/some-things-about-javascript/demo/javascript-palindrome.html)

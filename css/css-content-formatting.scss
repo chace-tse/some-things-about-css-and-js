@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 /*!
  * @Update: 2019 / 12 / 15
  * @Author: Moldy Br3ad
@@ -6,13 +7,16 @@
  * @Email: moldybr3ad@gmail.com
  * @Instagram: https://www.instagram.com/x_bread/
 */
+
+
 /*!
  * Reset Style
 */
 body {
   text-align: center;
-  background-color: #2b2b2b;
-  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif; }
+  background-color: rgba(43, 43, 43, 1);
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif;
+}
 
 div,
 td,
@@ -20,7 +24,8 @@ button,
 input,
 select,
 textarea {
-  text-align: left; }
+  text-align: left;
+}
 
 body,
 div,
@@ -50,15 +55,18 @@ dt,
 dd,
 blockquote {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 table {
   border-collapse: collapse;
-  border-spacing: 0; }
+  border-spacing: 0;
+}
 
 img {
   border: 0;
-  vertical-align: middle; }
+  vertical-align: middle;
+}
 
 address,
 caption,
@@ -69,38 +77,59 @@ em,
 th,
 var {
   font-style: normal;
-  font-weight: normal; }
+  font-weight: normal;
+}
 
-ul li {
-  list-style-image: none;
-  list-style-position: outside;
-  list-style-type: none; }
+ul {
+  li {
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+  }
+}
+
+// Variables
+$zoom: 1;
+$fontSize0: 0;
+$inlineBlock: inline-block;
 
 /*!
  * Clearfix 
 */
-.clearfix {
-  display: inline-block; }
-  .clearfix:after {
+@mixin clearfix {
+  display: $inlineBlock;
+
+  &:after {
     visibility: hidden;
     display: block;
-    font-size: 0;
+    font-size: $fontSize0;
     content: " ";
     clear: both;
-    height: 0; }
-  * html .clearfix {
+    height: 0;
+  }
+}
+
+.clearfix {
+  @include clearfix;
+
+  * html & {
     height: 1px;
-    zoom: 1; }
-  *:first-child + html .clearfix {
-    zoom: 1; }
+    zoom: $zoom;
+  }
+
+  *:first-child+html & {
+    zoom: $zoom;
+  }
+}
 
 .clear {
   clear: both;
   height: 0px;
   line-height: 0;
-  font-size: 0;
+  font-size: $fontSize0;
   overflow: hidden;
-  zoom: 1; }
+  zoom: $zoom;
+}
 
 /*!
  * HTML5
@@ -115,7 +144,8 @@ footer,
 nav,
 figure,
 menu {
-  display: block; }
+  display: block;
+}
 
 /*!
  * JS-container
@@ -124,7 +154,8 @@ menu {
   overflow: hidden;
   max-width: 860px;
   margin: 2em auto 0;
-  color: #fff; }
+  color: #fff;
+}
 
 /*!
  * Title 
@@ -135,7 +166,8 @@ menu {
   color: #fff;
   font-weight: 600;
   text-align: center;
-  text-transform: capitalize; }
+  text-transform: capitalize;
+}
 
 /*!
  * Paragraph text
@@ -144,7 +176,8 @@ menu {
   margin: .5em 0;
   color: #fff;
   font-size: .8em;
-  line-height: 1.5; }
+  line-height: 1.5;
+}
 
 /*!
  * Pre
@@ -152,14 +185,16 @@ menu {
 .js-pre,
 .js-code {
   position: relative;
-  font-size: 14px; }
+  font-size: 14px;
+}
 
 .js-pre {
-  display: inline-block;
+  display: $inlineBlock;
   vertical-align: top;
   padding-left: 1.8em;
   margin: .8em 0;
-  counter-reset: linenumber; }
+  counter-reset: linenumber;
+}
 
 .js-pre {
   overflow: auto;
@@ -170,11 +205,14 @@ menu {
   border-radius: 5px;
   line-height: 1.4;
   color: #fff;
-  background: #666; }
-  .js-pre > .js-code {
+  background: #666;
+
+  &>.js-code {
     display: block;
     text-align: left;
-    white-space: inherit; }
+    white-space: inherit;
+  }
+}
 
 /*!
 * Line Numbers Rows
@@ -190,31 +228,38 @@ menu {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none; }
-  .line-numbers-rows > span {
+  user-select: none;
+
+  &>span {
     display: block;
     pointer-events: none;
-    counter-increment: linenumber; }
-    .line-numbers-rows > span::before {
+    counter-increment: linenumber;
+
+    &::before {
       display: block;
       padding-right: .6em;
       text-align: right;
       color: #999;
-      content: counter(linenumber); }
+      content: counter(linenumber);
+    }
+  }
+}
 
 /*!
  * JS-list
 */
 .js-list {
   position: relative;
-  text-align: left; }
-  .js-list > li.js-list-item {
+  text-align: left;
+
+  &>li.js-list-item {
     position: relative;
     padding: .5em 1em;
     font-size: .8em;
     line-height: 1.5;
-    color: #fff; }
-    .js-list > li.js-list-item::before {
+    color: #fff;
+
+    &::before {
       position: absolute;
       left: 0;
       bottom: 0;
@@ -225,19 +270,34 @@ menu {
       height: 4px;
       border-radius: 50%;
       margin: auto;
-      background-color: #fff; }
+      background-color: #fff;
+    }
+  }
+}
 
 /**
 * 溢出省略号
 * @param {Number} 行数
 */
-/*! ellipsis */
-.ellipsis {
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical; }
 
-/*# sourceMappingURL=css-content-formatting.css.map */
+/*! ellipsis */
+@mixin ellipsis($rowCount: 1) {
+  @if $rowCount <=1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  @else {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $rowCount;
+    -webkit-box-orient: vertical;
+  }
+}
+
+.ellipsis {
+  @include ellipsis(2);
+}
